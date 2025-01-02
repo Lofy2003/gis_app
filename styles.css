@@ -7,7 +7,6 @@ body {
 }
 
 header {
-
     background-color: #4CAF50;
     color: white;
     text-align: center;
@@ -21,27 +20,13 @@ header h1 {
 }
 
 #sidebar {
-    position: absolute;
-    top:180px;
-    bottom: 50px;
-    left: 0;
-    width: 250px;
-    border: solid #4CAF50 2px;
+    position: relative;
+    width: 100%;
     background-color: #333;
-    padding-top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 154px;
-    border-radius: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
-    /* top: 150px;
-    left: 0;
-    width: 250px;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 20px; */
-
-
 
 #sidebar button {
     color: white;
@@ -53,14 +38,7 @@ header h1 {
     border: solid;
     border-top-left-radius: 35px;
     border-bottom-right-radius: 35px;
-    margin-bottom:40px;
-    /* color: white;
-    background-color: #4CAF50;
-    border: none;
-    padding: 15px;
-    width: 100%;
     margin-bottom: 10px;
-    border-radius: 10px; */
 }
 
 #sidebar button:hover {
@@ -78,7 +56,7 @@ header h1 {
     border: 2px dotted white;
     border-top-left-radius: 35px;
     border-bottom-right-radius: 35px;
-
+    margin-top: 10px;
 }
 
 #contact-link:hover {
@@ -88,16 +66,17 @@ header h1 {
 
 #content {
     padding: 20px;
-    margin-left: 270px;
+    box-sizing: border-box;
 }
 
 #map {
     border: 2px solid #4CAF50;
     border-radius: 10px;
+    width: 100%;
+    height: 300px;
 }
 
 footer {
-
     text-align: center;
     padding: 10px;
     background-color: #333;
@@ -106,39 +85,14 @@ footer {
     border-radius: 10px;
 }
 
-
-/* ***************************************************** */
-table {
-    width: 900px;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    margin: auto;
-}
-
-th,
-td {
-    padding: 8px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-
-
-/* form ****************/
 .container_contact_us {
     background-color: #f7f7f7;
-    width: 500px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#h1_contact_us {
-    text-align: center;
-    margin-top: 0;
-    color: black;
 }
 
 form {
@@ -155,21 +109,19 @@ input,
 textarea {
     padding: 10px;
     margin-bottom: 20px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #button_cotact_us {
     padding: 10px 20px;
-    width: 20%;
-    text-align: center;
     background-color: #0099cc;
     color: #fff;
     border: none;
     border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(110, 110, 110, 0.689);
-
+    cursor: pointer;
 }
 
 #button_cotact_us:hover {
@@ -177,19 +129,84 @@ textarea {
     transition: 0.3s;
 }
 
-button:hover {
-    background-color: #0088cc;
+.table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px auto;
 }
 
-.form_inputs {
-    border: 1px solid rgb(78, 78, 78);
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
 }
 
-textarea {
-    resize: none;
-}
-
-#submit {
+th, td {
+    padding: 8px;
     text-align: center;
+    border: 1px solid #ddd;
 }
 
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    #sidebar {
+        position: absolute;
+        top: 180px;
+        bottom: 50px;
+        left: 0;
+        width: 250px;
+        border: solid #4CAF50 2px;
+        padding: 20px;
+    }
+
+    #content {
+        margin-left: 270px;
+    }
+
+    #map {
+        height: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    .container_contact_us {
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        padding: 8px;
+    }
+
+    #button_cotact_us {
+        padding: 8px 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    #sidebar {
+        width: 100%;
+        position: relative;
+        border: none;
+        padding: 10px;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+}
